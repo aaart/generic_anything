@@ -2,5 +2,21 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "vue": "^2.5.2"
+  },
+  "scripts": {
+    "build-dev": "gulp build-website --isDev",
+    "build-prod": "gulp build-website --isProd"
+  },
+  "devDependencies": {
+    "fs": "0.0.1-security",
+    "gulp": "^3.9.1",
+    "gulp-clean-dest": "^0.2.0",
+    "gulp-debug": "^3.1.0",
+    "gulp-print": "^2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-run": "^1.7.1",
+    "gulp-uglify": "^3.0.0",
+    "yargs": "^10.0.3",
+    "merge-stream": "^1.0.1"
   }
 }
