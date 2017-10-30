@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "bootstrap": "^3.3.7",
-    "vue": "^2.5.2"
+    "jquery": "^3.2.1",
+    "vue": "^2.5.2",
+    "vue-router": "^3.0.1"
   },
   "scripts": {
     "build-dev": "gulp build-website --isDev",
@@ -16,7 +18,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-run": "^1.7.1",
     "gulp-uglify": "^3.0.0",
-    "yargs": "^10.0.3",
-    "merge-stream": "^1.0.1"
+    "merge-stream": "^1.0.1",
+    "webpack": "^3.8.1",
+    "yargs": "^10.0.3"
   }
 }

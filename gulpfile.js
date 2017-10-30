@@ -37,21 +37,22 @@ var tools = {
         //console.log(sourceFiles);
         return sourceFiles.map(x => cfg.nodeModules + srcPath + x);
     },
-    removeMinSuffix: path => {
-        path => {
-            if (path.basename.endsWith(".min")) {
-                path.basename = path.basename.replace(".min", "");
-            }
-            return path;
+    removeNameSuffix: (path, suffix, suffixReplacement) => {
+        suffixReplacement = suffixReplacement || "";
+        if (path.basename.endsWith(suffix)) {
+            path.basename = path.basename.replace(suffix, suffixReplacement);
         }
+        return path;
     }
 }
 
 gulp.task(
     "build-website", 
     [
-        "print-cfg", 
+        "print-cfg",
+        "copy-jquery", 
         "copy-vue",
+        "copy-vue-router",
         "copy-bootstrap"
     ]);
 
@@ -59,20 +60,51 @@ gulp.task("print-cfg", () => {
     console.log(cfg);
 });
 
+gulp.task("copy-jquery", () => {
+    var sourceFiles = ["core.js", "jquery.min.map"];
+    if (cfg.isDev) {
+        sourceFiles.push("jquery.js");
+    } else {
+        sourceFiles.push("jquery.min.js");
+    }
+    sourceFiles = sourceFiles.map(item => cfg.nodeModules + "jquery/dist/" + item);
+    gulp.src(sourceFiles)
+    .pipe(rename(path => {
+        if (path.extname !== ".map") tools.removeNameSuffix(path, ".min");
+    }))
+    .pipe(cleanDest(cfg.externalsTarget + "jquery/"))
+    .pipe(gulp.dest(cfg.externalsTarget + "jquery/"));
+    
+});
+
 gulp.task("copy-vue", () => {
     var sourceFiles = tools.extractSrcFiles("vue/dist/", ".js");
     gulp.src(sourceFiles)
     //.pipe(debug())
-    .pipe(rename(tools.removeMinSuffix))
+    .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
     .pipe(cleanDest(cfg.externalsTarget + "vue/"))    
     .pipe(gulp.dest(cfg.externalsTarget + "vue/"));
 });
+
+gulp.task("copy-vue-router", () => {
+    var sourceFiles = tools.extractSrcFiles("vue-router/dist/", ".js");
+    gulp.src(sourceFiles)
+    //.pipe(debug())
+    .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
+    .pipe(cleanDest(cfg.externalsTarget + "vue-router/"))    
+    .pipe(gulp.dest(cfg.externalsTarget + "vue-router/"));
+});
+
 
 gulp.task("copy-bootstrap", () => {
     var sourceStyles = tools.extractSrcFiles("bootstrap/dist/css/", ".css").concat(tools.extractSrcFiles("bootstrap/dist/css/", ".css.map"));
 
     gulp.src(sourceStyles)
-    .pipe(rename(tools.removeMinSuffix))
+    .pipe(rename(path => {
+        tools.removeNameSuffix(path, ".min.css", ".css");
+        tools.removeNameSuffix(path, ".min");
+        
+    }))
     .pipe(cleanDest(cfg.externalsTarget + "bootstrap/css/"))
     .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/css/"));
 
@@ -82,7 +114,7 @@ gulp.task("copy-bootstrap", () => {
 
     var sourceJs = tools.extractSrcFiles("bootstrap/dist/js/", ".js");
     gulp.src(sourceJs)
-    .pipe(rename(tools.removeMinSuffix))
+    .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
     .pipe(cleanDest(cfg.externalsTarget + "bootstrap/js/"))    
     .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/js/"));
 });
