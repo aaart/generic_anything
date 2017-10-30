@@ -16,7 +16,7 @@ namespace kestrelhost
     {
         public static void Main(string[] args)
         {
-            string contentRoot = args.FirstOrDefault() ?? Directory.GetCurrentDirectory();;
+            string contentRoot = args.FirstOrDefault() ?? Directory.GetCurrentDirectory(); ;
             WebHost.CreateDefaultBuilder()
                 .CaptureStartupErrors(true)
                 .UseSetting(WebHostDefaults.DetailedErrorsKey, "true")
@@ -26,19 +26,29 @@ namespace kestrelhost
                 .UseEnvironment("Development")
                 .Configure(builder =>
                 {
+                    var appDirProvider = new PhysicalFileProvider($"{contentRoot}\\app");
+
+                    builder.UseDefaultFiles(new DefaultFilesOptions
+                    {
+                        RequestPath = string.Empty,
+                        DefaultFileNames = new List<string> { "index.html" },
+                        FileProvider = appDirProvider
+                    });
+
                     var opts = new StaticFileOptions
                     {
                         RequestPath = "/3rd",
                         FileProvider = new PhysicalFileProvider($"{contentRoot}\\3rd\\")
                     };
                     builder.UseStaticFiles(opts);
-
+                    
                     opts = new StaticFileOptions
                     {
                         RequestPath = "",
-                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\app")
+                        FileProvider = appDirProvider
                     };
                     builder.UseStaticFiles(opts);
+                    
                 })
                 .Build()
                 .Run();
