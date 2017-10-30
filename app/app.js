@@ -1,6 +1,15 @@
+Vue.component('home-page', {
+    template: '<div>This is home page</div>'
+});
+
+Vue.component('sub-page', {
+    template: '<div>sub page, yay!</div>'
+});
+
 const router = new VueRouter({
     routes: [
-        { path: '/', component: {template: "<div>replaced!</div>" }}
+        { path: '/', component: Vue.component('home-page')},
+        { path: '/sub', component: Vue.component('sub-page')}
     ]
 })
 
