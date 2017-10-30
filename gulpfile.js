@@ -13,7 +13,7 @@ var cfg = {
     isDev: yargs.isDev,
     isProd: yargs.isProd,
     nodeModules: "node_modules/",
-    externalsTarget: "3rd/"
+    externalsTarget: "website-dev/3rd/"
 };
 
 var tools = {
