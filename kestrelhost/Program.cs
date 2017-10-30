@@ -38,7 +38,7 @@ namespace kestrelhost
                     var opts = new StaticFileOptions
                     {
                         RequestPath = "/3rd",
-                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\3rd\\")
+                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\3rd\\")
                     };
                     builder.UseStaticFiles(opts);
                     
