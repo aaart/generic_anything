@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div>
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
@@ -16,9 +16,9 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
     <h2>Timezones</h2>
-    <ul>
-      <!-- <li><router-link :to="Page">Page</router-link></li> -->
-    </ul>
+    <div>
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 

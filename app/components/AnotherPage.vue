@@ -6,10 +6,10 @@
 
 <script>
 export default {
-  name: 'page',
+  name: 'another-page',
   data () {
     return {
-      msg: 'This is Page.vue.'
+      msg: 'This is AnotherPage.vue.'
     }
   }
 }
