@@ -44,6 +44,13 @@ namespace kestrelhost
                     
                     opts = new StaticFileOptions
                     {
+                        RequestPath = "/js",
+                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\js\\")
+                    };
+                    builder.UseStaticFiles(opts);
+                    
+                    opts = new StaticFileOptions
+                    {
                         RequestPath = "",
                         FileProvider = appDirProvider
                     };

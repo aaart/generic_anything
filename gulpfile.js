@@ -8,6 +8,7 @@ var yargs = require('yargs').argv;
 var fs = require('fs');
 var rename = require('gulp-rename');
 var cleanDest = require('gulp-clean-dest');
+var webpack = require('gulp-webpack');
 
 var cfg = {
     isDev: yargs.isDev,
@@ -50,10 +51,11 @@ gulp.task(
     "build-website", 
     [
         "print-cfg",
-        "copy-jquery", 
-        "copy-vue",
-        "copy-vue-router",
-        "copy-bootstrap"
+        // "copy-jquery", 
+        // "copy-vue",
+        // "copy-vue-router",
+        // "copy-bootstrap",
+        "run-webpack"
     ]);
 
 gulp.task("print-cfg", () => {
@@ -68,7 +70,7 @@ gulp.task("copy-jquery", () => {
         sourceFiles.push("jquery.min.js");
     }
     sourceFiles = sourceFiles.map(item => cfg.nodeModules + "jquery/dist/" + item);
-    gulp.src(sourceFiles)
+    return gulp.src(sourceFiles)
     .pipe(rename(path => {
         if (path.extname !== ".map") tools.removeNameSuffix(path, ".min");
     }))
@@ -79,42 +81,49 @@ gulp.task("copy-jquery", () => {
 
 gulp.task("copy-vue", () => {
     var sourceFiles = tools.extractSrcFiles("vue/dist/", ".js");
-    gulp.src(sourceFiles)
-    //.pipe(debug())
-    .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
-    .pipe(cleanDest(cfg.externalsTarget + "vue/"))    
-    .pipe(gulp.dest(cfg.externalsTarget + "vue/"));
+    return 
+        gulp.src(sourceFiles)
+        //.pipe(debug())
+        .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
+        .pipe(cleanDest(cfg.externalsTarget + "vue/"))    
+        .pipe(gulp.dest(cfg.externalsTarget + "vue/"));
 });
 
 gulp.task("copy-vue-router", () => {
     var sourceFiles = tools.extractSrcFiles("vue-router/dist/", ".js");
-    gulp.src(sourceFiles)
-    //.pipe(debug())
-    .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
-    .pipe(cleanDest(cfg.externalsTarget + "vue-router/"))    
-    .pipe(gulp.dest(cfg.externalsTarget + "vue-router/"));
+    return 
+        gulp.src(sourceFiles)
+        //.pipe(debug())
+        .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
+        .pipe(cleanDest(cfg.externalsTarget + "vue-router/"))    
+        .pipe(gulp.dest(cfg.externalsTarget + "vue-router/"));
 });
 
 
 gulp.task("copy-bootstrap", () => {
     var sourceStyles = tools.extractSrcFiles("bootstrap/dist/css/", ".css").concat(tools.extractSrcFiles("bootstrap/dist/css/", ".css.map"));
-
-    gulp.src(sourceStyles)
-    .pipe(rename(path => {
-        tools.removeNameSuffix(path, ".min.css", ".css");
-        tools.removeNameSuffix(path, ".min");
-        
-    }))
-    .pipe(cleanDest(cfg.externalsTarget + "bootstrap/css/"))
-    .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/css/"));
-
-    gulp.src(cfg.nodeModules + "bootstrap/fonts/*")
-    .pipe(cleanDest(cfg.externalsTarget + "bootstrap/fonts/"))
-    .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/fonts/"))
-
     var sourceJs = tools.extractSrcFiles("bootstrap/dist/js/", ".js");
-    gulp.src(sourceJs)
-    .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
-    .pipe(cleanDest(cfg.externalsTarget + "bootstrap/js/"))    
-    .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/js/"));
+    return 
+        [gulp.src(sourceStyles)
+        .pipe(rename(path => {
+            tools.removeNameSuffix(path, ".min.css", ".css");
+            tools.removeNameSuffix(path, ".min");
+            
+        }))
+        .pipe(cleanDest(cfg.externalsTarget + "bootstrap/css/"))
+        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/css/")),
+        
+        gulp.src(cfg.nodeModules + "bootstrap/fonts/*")
+        .pipe(cleanDest(cfg.externalsTarget + "bootstrap/fonts/"))
+        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/fonts/")),
+
+        gulp.src(sourceJs)
+        .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
+        .pipe(cleanDest(cfg.externalsTarget + "bootstrap/js/"))    
+        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/js/"))]
+});
+
+gulp.task("run-webpack", () => {
+    //cross-env NODE_ENV=production webpack --progress --hide-modules
+    return run('webpack --progress --hide-modules').exec();
 });
