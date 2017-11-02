@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from './components/Home.vue'
+import Layout from './Layout.vue'
 import Page from './components/Page.vue'
 import AnotherPage from './components/AnotherPage.vue'
 
@@ -28,8 +28,8 @@ new Vue({
       }
     ]
   }),
-  template: '<Home/>',
-  components: { Home }
+  template: '<Layout />',
+  components: { Layout }
 });
 
 //

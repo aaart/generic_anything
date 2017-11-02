@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'home',
+  name: 'layout',
   data () {
     return {
       msg: 'Artur says hi!'
