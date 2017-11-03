@@ -70,19 +70,18 @@ gulp.task("copy-jquery", () => {
         sourceFiles.push("jquery.min.js");
     }
     sourceFiles = sourceFiles.map(item => cfg.nodeModules + "jquery/dist/" + item);
-    return gulp.src(sourceFiles)
-    .pipe(rename(path => {
-        if (path.extname !== ".map") tools.removeNameSuffix(path, ".min");
-    }))
-    .pipe(cleanDest(cfg.externalsTarget + "jquery/"))
-    .pipe(gulp.dest(cfg.externalsTarget + "jquery/"));
+    gulp.src(sourceFiles)
+        .pipe(rename(path => {
+            if (path.extname !== ".map") tools.removeNameSuffix(path, ".min");
+        }))
+        .pipe(cleanDest(cfg.externalsTarget + "jquery/"))
+        .pipe(gulp.dest(cfg.externalsTarget + "jquery/"));
     
 });
 
 gulp.task("copy-vue", () => {
     var sourceFiles = tools.extractSrcFiles("vue/dist/", ".js");
-    return 
-        gulp.src(sourceFiles)
+    gulp.src(sourceFiles)
         //.pipe(debug())
         .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
         .pipe(cleanDest(cfg.externalsTarget + "vue/"))    
@@ -91,8 +90,7 @@ gulp.task("copy-vue", () => {
 
 gulp.task("copy-vue-router", () => {
     var sourceFiles = tools.extractSrcFiles("vue-router/dist/", ".js");
-    return 
-        gulp.src(sourceFiles)
+    gulp.src(sourceFiles)
         //.pipe(debug())
         .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
         .pipe(cleanDest(cfg.externalsTarget + "vue-router/"))    
@@ -103,27 +101,27 @@ gulp.task("copy-vue-router", () => {
 gulp.task("copy-bootstrap", () => {
     var sourceStyles = tools.extractSrcFiles("bootstrap/dist/css/", ".css").concat(tools.extractSrcFiles("bootstrap/dist/css/", ".css.map"));
     var sourceJs = tools.extractSrcFiles("bootstrap/dist/js/", ".js");
-    return 
-        [gulp.src(sourceStyles)
+
+    gulp.src(sourceStyles)
         .pipe(rename(path => {
             tools.removeNameSuffix(path, ".min.css", ".css");
             tools.removeNameSuffix(path, ".min");
             
         }))
         .pipe(cleanDest(cfg.externalsTarget + "bootstrap/css/"))
-        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/css/")),
+        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/css/"));
         
-        gulp.src(cfg.nodeModules + "bootstrap/fonts/*")
+    gulp.src(cfg.nodeModules + "bootstrap/fonts/*")
         .pipe(cleanDest(cfg.externalsTarget + "bootstrap/fonts/"))
-        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/fonts/")),
+        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/fonts/"));
 
-        gulp.src(sourceJs)
-        .pipe(rename(path => tools.removeNameSuffix(path, ".min")))
+    gulp.src(sourceJs)
+        .pipe(rename(path => tools.removeNameSuffix(path, ".minx")))
         .pipe(cleanDest(cfg.externalsTarget + "bootstrap/js/"))    
-        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/js/"))]
+        .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/js/"));
 });
 
 gulp.task("run-webpack", () => {
     //cross-env NODE_ENV=production webpack --progress --hide-modules
-    return run('webpack --progress --hide-modules').exec();
+    run('webpack --progress').exec();
 });

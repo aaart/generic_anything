@@ -10,14 +10,13 @@
 <script>
 import routes from 'routes'
 
-var path = '/';
-
 var data = () => {
   return {
-    msg: 'This is Page.vue'
+    msg: 'This is MainPage.vue'
   }
 };
 
+var path = '/';
 var component = { data };
 
 routes.push({ path, component });
