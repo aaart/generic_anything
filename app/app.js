@@ -18,12 +18,12 @@ new Vue({
     routes: [
       {
         path: '/',
-        name: 'Page',
+        //name: 'page',
         component: Page
       },
       {
         path: '/another',
-        name: "AnotherPage",
+        //name: "another",
         component: AnotherPage
       }
     ]

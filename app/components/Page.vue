@@ -1,6 +1,9 @@
 <template>
   <div>
-    <div>{{ msg }}</div>
+    <ul>
+        <li>{{ msg }}</li>
+        <li><router-link to="another">Another page</router-link></li>
+    </ul>
   </div>
 </template>
 
