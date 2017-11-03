@@ -1,9 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Layout from './Layout.vue'
-import Page from './components/Page.vue'
-import AnotherPage from './components/AnotherPage.vue'
+import * as routedComponents from 'routed-components'
 import routes from 'routes'
+import Layout from './Layout.vue'
 
 // new Vue({
 //   el: '#app',

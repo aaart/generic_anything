@@ -10,17 +10,17 @@
 <script>
 import routes from 'routes'
 
-var component = {
-  url: "/",
-  name: 'page',
-  data: function () {
-    return {
-      msg: 'This is Page.vue.'
-    }
+var path = '/';
+
+var data = () => {
+  return {
+    msg: 'This is Page.vue'
   }
 };
 
-routes.push({ path: component.url, component: component });
+var component = { data };
+
+routes.push({ path, component });
 
 export default component;
 </script>
