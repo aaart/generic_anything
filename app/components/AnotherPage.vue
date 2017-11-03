@@ -2,19 +2,27 @@
   <div>
     <ul>
         <li>{{ msg }}</li>
-        <li><router-link to="/">Page</router-link></li>
+        <li><router-link to="/">link to page</router-link></li>
     </ul>
   </div>
 </template>
 
 <script>
-module.exports =  {
+import routes from 'routes'
+
+var component = {
+  url: "/another",
   name: 'another-page',
-  data () {
+  data: function () {
     return {
       msg: 'This is AnotherPage.vue.'
     }
   }
-}
+};
+
+routes.push({ path: component.url, component: component });
+
+
+export default component
 </script>
 

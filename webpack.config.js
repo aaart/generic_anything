@@ -1,5 +1,6 @@
 var path = require('path')
 var webpack = require('webpack')
+//var _ = require('lodash');
 
 module.exports = {
   entry: './app/app.js',
@@ -23,6 +24,8 @@ module.exports = {
   },
   resolve: {
     alias: {
+      'routes$': path.join(__dirname, 'app/routes.js'),
+      // node_modules does not require path.join. They are automatically resolved in node_modules dir, or... it just looks like that :D
       'vue$': 'vue/dist/vue.esm.js',
       'vue-router$': 'vue-router/dist/vue-router.esm.js'
     }

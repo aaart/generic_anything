@@ -51,10 +51,10 @@ gulp.task(
     "build-website", 
     [
         "print-cfg",
-        // "copy-jquery", 
-        // "copy-vue",
-        // "copy-vue-router",
-        // "copy-bootstrap",
+        "copy-jquery", 
+        "copy-vue",
+        "copy-vue-router",
+        "copy-bootstrap",
         "run-webpack"
     ]);
 

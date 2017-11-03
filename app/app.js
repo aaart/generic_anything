@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Layout from './Layout.vue'
 import Page from './components/Page.vue'
 import AnotherPage from './components/AnotherPage.vue'
+import routes from 'routes'
 
 // new Vue({
 //   el: '#app',
@@ -14,20 +15,7 @@ Vue.config.productionTip = false;
 
 new Vue({
   el: '#app',
-  router: new VueRouter({
-    routes: [
-      {
-        path: '/',
-        //name: 'page',
-        component: Page
-      },
-      {
-        path: '/another',
-        //name: "another",
-        component: AnotherPage
-      }
-    ]
-  }),
+  router: new VueRouter({routes}),
   template: '<Layout />',
   components: { Layout }
 });
