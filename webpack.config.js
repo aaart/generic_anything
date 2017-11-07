@@ -1,13 +1,17 @@
 var path = require('path')
 var webpack = require('webpack')
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 //var _ = require('lodash');
 
 module.exports = {
-  entry: './app/app.js',
+  entry: {
+    'application': './app/app.js', 
+    'application-styles': "./app/css/timezones.css"
+  },
   output: {
-    path: path.resolve(__dirname, './website-dev/js'),
-    publicPath: '/js',
-    filename: 'website.js'
+    path: path.resolve(__dirname, './website-dev/'),
+    publicPath: '/',
+    filename: '[name].js'
   },
   module: {
     rules: [
@@ -15,14 +19,27 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: {
-          loaders: {
-          }
-          // other vue-loader options go here
+          loaders: { }
         }
+      },
+      {
+        test: /\.css$/,
+        loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: "css-loader" })
+      },
+      {
+        test: /\.ts$/,
+        loader: 'ts-loader'
       }
+    ],
+    loaders: [
+      // { 
+      //   test: /\.css$/, 
+      //   loader: ExtractTextPlugin.extract("style-loader", "css-loader") 
+      // }
     ]
   },
   resolve: {
+    extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       'routes$': path.join(__dirname, 'app/routes.js'),
       'routed-components$': path.join(__dirname, 'app/routed-components.js'),
@@ -39,5 +56,8 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map'
+  devtool: '#eval-source-map',
+  plugins: [
+      new ExtractTextPlugin("[name].css")
+  ]
 }

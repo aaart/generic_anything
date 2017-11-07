@@ -35,17 +35,17 @@ namespace kestrelhost
                         FileProvider = appDirProvider
                     });
 
+                    // var opts = new StaticFileOptions
+                    // {
+                    //     RequestPath = "/3rd",
+                    //     FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\3rd\\")
+                    // };
+                    // builder.UseStaticFiles(opts);
+                    
                     var opts = new StaticFileOptions
                     {
-                        RequestPath = "/3rd",
-                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\3rd\\")
-                    };
-                    builder.UseStaticFiles(opts);
-                    
-                    opts = new StaticFileOptions
-                    {
-                        RequestPath = "/js",
-                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\js\\")
+                        RequestPath = string.Empty,
+                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\")
                     };
                     builder.UseStaticFiles(opts);
                     

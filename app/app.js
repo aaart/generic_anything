@@ -1,8 +1,9 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import * as routedComponents from 'routed-components'
-import routes from 'routes'
-import Layout from './Layout.vue'
+//require("bootstrap-webpack");
+import Vue from "vue";
+import VueRouter from "vue-router";
+import * as routedComponents from "routed-components";
+import routes from "./routes";
+import Layout from './Layout.vue';
 
 // new Vue({
 //   el: '#app',
@@ -12,7 +13,7 @@ import Layout from './Layout.vue'
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
-new Vue({
+let mainViewModel = new Vue({
   el: '#app',
   router: new VueRouter({routes}),
   template: '<Layout />',

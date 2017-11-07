@@ -1,2 +1,1 @@
-const routingTable = [];
-export default routingTable;
+export default [];

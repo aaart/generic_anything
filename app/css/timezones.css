@@ -1,0 +1,14 @@
+
+.top-buffer { margin-top:20px; }
+
+.top-buffer-large { margin-top:40px; }
+
+.inner-buffer-md {
+  padding: 3%;
+}
+
+.tile {
+  background: rgb(221, 237, 253);
+  opacity: 1.0;
+  height: 14rem;
+}
