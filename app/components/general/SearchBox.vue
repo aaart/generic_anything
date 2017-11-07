@@ -1,3 +1,5 @@
+<script src="./SearchBox.ts" lang="ts"></script>
+
 <template>
   <div class="container-fluid">
     <div class="row">
@@ -5,22 +7,8 @@
         <input class="form-control input-lg" type="text" />
       </div>
       <div class="col-xs-2">
-        <button class="btn btn-default btn-block center" type="button" v-on:click="search" >Go!</button>
+        <button class="btn btn-default btn-block center" type="button" >Go!</button>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  name: 'main-header',
-  data () {
-    return { }
-  },
-  methods: {
-    search: () => {
-      alert("search clicked!");
-    }
-  }
-}
-</script>

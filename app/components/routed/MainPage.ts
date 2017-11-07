@@ -1,6 +1,6 @@
-import routes from 'routes';
-import SearchBox from './../general/SearchBox.vue';
-import CityList from './../general/CityList.vue';
+//import routes from 'routes';
+import SearchBox from './../general/SearchBox';
+import CityList from './../general/CityList';
 
 let data = () => {
   return {
@@ -14,6 +14,6 @@ let component = {
     components: { SearchBox, CityList }
   };
 
-routes.push({ path, component });
+//routes.push({ path, component });
 
 export default component;

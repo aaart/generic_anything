@@ -1,4 +1,4 @@
-<script src="./CityList.js" ></script>
+<script src="./CityList.ts" lang="ts"></script>
 
 <template>
   <div class="container-fluid">

@@ -11,7 +11,8 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './website-dev/'),
     publicPath: '/',
-    filename: '[name].js'
+    filename: '[name].js',
+    sourceMapFilename: '[name].js.map'
   },
   module: {
     rules: [
@@ -27,19 +28,17 @@ module.exports = {
         loader: ExtractTextPlugin.extract({ fallback: "style-loader", use: "css-loader" })
       },
       {
-        test: /\.ts$/,
-        loader: 'ts-loader'
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/],
+        }
       }
-    ],
-    loaders: [
-      // { 
-      //   test: /\.css$/, 
-      //   loader: ExtractTextPlugin.extract("style-loader", "css-loader") 
-      // }
     ]
   },
   resolve: {
-    extensions: ['.ts', '.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json'],
     alias: {
       'routes$': path.join(__dirname, 'app/routes.js'),
       'routed-components$': path.join(__dirname, 'app/routed-components.js'),

@@ -1,3 +1,6 @@
+<script src="./Layout.ts" lang="ts"></script>
+
+
 <template>
     <div class="container">
       <div class="row">
@@ -18,16 +21,4 @@
     </div>
 </template>
 
-<script>
-import MainHeader from './components/general/MainHeader.vue'
-
-export default {
-  name: 'layout',
-  data () {
-    return {
-    }
-  },
-  components: { MainHeader }
-}
-</script>
 

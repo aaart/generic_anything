@@ -2,7 +2,7 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
-    "vue": "^2.5.2",
+    "vue": "git+https://github.com/DanielRosenwasser/vue.git#540a38fb21adb7a7bc394c65e23e6cffb36cd867",
     "vue-router": "^3.0.1"
   },
   "scripts": {
@@ -30,8 +30,8 @@
     "style-loader": "^0.19.0",
     "ts-loader": "^3.1.1",
     "typescript": "^2.6.1",
-    "vue-loader": "^13.3.0",
-    "vue-template-compiler": "^2.4.4",
+    "vue-loader": "^13.4.0",
+    "vue-template-compiler": "^2.2.1",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.1",
     "yargs": "^10.0.3"

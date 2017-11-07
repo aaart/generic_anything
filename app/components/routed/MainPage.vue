@@ -1,4 +1,4 @@
-<script src="./MainPage.js" ></script>
+<script src="./MainPage.ts" lang="ts"></script>
 
 <template>
   <div class="container-fluid">

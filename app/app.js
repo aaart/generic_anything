@@ -1,8 +1,8 @@
 //require("bootstrap-webpack");
 import Vue from "vue";
 import VueRouter from "vue-router";
-import * as routedComponents from "routed-components";
-import routes from "./routes";
+import routes from "routes";
+
 import Layout from './Layout.vue';
 
 // new Vue({

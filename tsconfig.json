@@ -1,0 +1,18 @@
+{
+    "compilerOptions": {
+        "outDir": "./website-dev/",
+        "sourceMap": true,
+        "strict": true,
+        "module": "es2015",
+        "moduleResolution": "node",
+        "target": "es5",
+        "experimentalDecorators": true //,
+        // "baseUrl": ".",
+        // "paths": {
+        //     "routes": ["app/routes.js"]
+        // }
+    },
+    "include": [
+        "./app/**/*"
+    ]
+}
