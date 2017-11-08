@@ -1,6 +1,11 @@
-export default {
-    name: 'main-header',
-    data () {
-      return { }
-    },
-  };
+class MainHeaderViewModel {
+    name: string = "main-header";
+
+    data() {
+      return {
+
+      };
+    }
+}
+
+export default new MainHeaderViewModel();

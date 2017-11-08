@@ -1,3 +1,8 @@
+// class CityListViewModel {
+//     name: string = "city-list";
+// }
+
+
 export default {
     name: 'city-list',
     props: {
