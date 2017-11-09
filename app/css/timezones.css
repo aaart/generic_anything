@@ -1,10 +1,10 @@
 
-.top-buffer { margin-top:20px; }
+.top-buffer-md { margin-top:20px; }
 
 .top-buffer-large { margin-top:40px; }
 
-.inner-buffer-md {
-  padding: 3%;
+.inner-buffer-xs {
+  padding: 1rem;
 }
 
 .tile {

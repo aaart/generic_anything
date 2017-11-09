@@ -1,27 +1,22 @@
-class SearchBoxViewModel {
-    public name: string;
-    public message: string;
+import Vue from "vue";
 
-    constructor() {
-        this.name = "search-box";
-        this.message = "Search clicked - contructor value."
-    }
-
-    public props = {
-        
-    }
-
-    public data() {
-        return {message: this.message};
-    }
-
-    public methods = {
-        searchClicked: () => { 
-            //alert(this.props.message); 
+export default Vue.extend({
+    props: {
+        message: {
+            type: String,
+            default: "default message"
+        }
+    },
+    data(): any {
+        return {
+            anotherMessage: this.message.default
+        };
+    },
+    methods: {
+        searchClicked(): void {
             console.log(this.message);
+            this.anotherMessage = this.message + " another.";
+            console.log(this.anotherMessage);
         }
     }
-
-    components = {}
-}
-export default new SearchBoxViewModel();
+});

@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "@types/lodash": "^4.14.83",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
+    "lodash": "^4.17.4",
     "vue": "git+https://github.com/DanielRosenwasser/vue.git#540a38fb21adb7a7bc394c65e23e6cffb36cd867",
     "vue-router": "^3.0.1"
   },

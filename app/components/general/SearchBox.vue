@@ -2,7 +2,6 @@
 
 <template>
   <div class="container-fluid">
-    {{ message }}
     <div class="row">
       <div class="col-xs-10">
         <input class="form-control input-lg" type="text" />

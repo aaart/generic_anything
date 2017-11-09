@@ -1,4 +1,6 @@
 //require("bootstrap-webpack");
+import _ from "lodash";
+
 import Vue from "vue";
 import VueRouter from "vue-router";
 import routes from "routes";
