@@ -1,5 +1,7 @@
 import MainPage from "./components/routed/MainPage.vue"
-var route = { path: "/", component: MainPage };
+import About from "./components/routed/About.vue"
 
-
-export default [ route ];
+export default [ 
+    { path: "/", component: MainPage },
+    { path: "/about", component: About }
+ ];

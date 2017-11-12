@@ -9,7 +9,7 @@ export default Vue.extend({
             default: 3
         }
     },
-    data(): any {
+    data: function(): any {
         return { 
             cities: []
         };

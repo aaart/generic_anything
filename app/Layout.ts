@@ -1,10 +1,13 @@
-import MainHeader from './components/general/MainHeader'
+import Vue from "vue";
 
-export default {
+import Navigation from "./components/general/Navigation"
+import MainHeader from "./components/general/MainHeader"
+
+export default Vue.extend({
   name: 'layout',
-  data () {
+  data: function(): any {
     return {
     }
   },
-  components: { MainHeader }
-}
+  components: { Navigation, MainHeader }
+});

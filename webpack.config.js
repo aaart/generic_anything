@@ -42,10 +42,10 @@ module.exports = {
     alias: {
       'routes$': path.join(__dirname, 'app/routes.js'),
       'routed-components$': path.join(__dirname, 'app/routed-components.js'),
-      // node_modules does not require path.join. They are automatically resolved in node_modules dir, or... it just looks like that :D
+      'lodash$': path.join(__dirname, 'node_modules/lodash/lodash.js'),
+      
       'vue$': 'vue/dist/vue.esm.js',
       'vue-router$': 'vue-router/dist/vue-router.esm.js',
-      '_$': path.join(__dirname, 'node_modules/lodash/lodash.js')
     }
   },
   devServer: {

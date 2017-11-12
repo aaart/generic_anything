@@ -1,4 +1,8 @@
 
+.full-width {
+  width: 100%;
+}
+
 .top-buffer-md { margin-top:20px; }
 
 .top-buffer-large { margin-top:40px; }
