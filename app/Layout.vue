@@ -1,13 +1,13 @@
 <script src="./Layout.ts" lang="ts"></script>
 
 <template>
-    <div id="layout" class="container full-width">
-      <div class="row">
-        <div class="col-xs-1">
+    <div id="layout" class="width-100-percent">
+      <div>
+        <div>
             <navigation></navigation>
         </div>
-        <div class="col-cs-11">
-          <div class="container">
+        <div>
+          <div class="container width-80-percent">
             <div id="layout-header" class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <main-header></main-header>

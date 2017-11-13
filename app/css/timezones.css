@@ -1,6 +1,10 @@
 
-.full-width {
+.width-100-percent {
   width: 100%;
+}
+
+.width-80-percent {
+  width: 80%;
 }
 
 .top-buffer-md { margin-top:20px; }

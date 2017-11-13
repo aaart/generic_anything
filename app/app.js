@@ -6,11 +6,6 @@ import routes from "routes";
 
 import Layout from './Layout.vue';
 
-// new Vue({
-//   el: '#app',
-//   render: h => h(Home)
-// })
-
 Vue.use(VueRouter);
 Vue.config.productionTip = false;
 
