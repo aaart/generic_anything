@@ -12,7 +12,10 @@
             <span></span>
         </div>
         <div class="menu" v-bind:class="{ open: menuOpened }">
-            treść
+            <ul>
+                <li><router-link :to="{ name: 'home' }">Home</router-link></li>
+                <li><router-link :to="{ name: 'about' }">About</router-link></li>
+            </ul>
         </div>
     </div>
 </template>

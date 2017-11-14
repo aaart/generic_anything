@@ -14,9 +14,9 @@ export default Vue.extend({
     },
     methods: {
         searchClicked(): void {
-            console.log(this.message);
+            //console.log(this.message);
             this.anotherMessage = this.message + " another.";
-            console.log(this.anotherMessage);
+            //console.log(this.anotherMessage);
         }
     }
 });

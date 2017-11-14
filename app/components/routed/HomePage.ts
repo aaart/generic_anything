@@ -4,7 +4,7 @@ import CityList from './../general/CityList';
 
 let data = () => {
   return {
-    msg: 'This is MainPage.vue'
+    msg: 'This is HomePage.vue'
   }
 };
 

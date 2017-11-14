@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "@types/lodash": "^4.14.83",
+    "@types/lodash": "^4.14.85",
     "bootstrap": "^3.3.7",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
@@ -9,7 +9,8 @@
   },
   "scripts": {
     "build-dev": "gulp build-website --isDev",
-    "build-prod": "gulp build-website --isProd"
+    "build-prod": "gulp build-website --isProd",
+    "test": "jasmine-ts \"test/*.spec.ts\""
   },
   "devDependencies": {
     "cross-env": "^5.1.1",
@@ -26,16 +27,19 @@
     "gulp-uglify": "^3.0.0",
     "gulp-webpack": "^1.5.0",
     "imports-loader": "^0.7.1",
+    "jasmine-ts": "^0.2.1",
     "less": "^2.7.3",
     "less-loader": "^4.0.5",
     "merge-stream": "^1.0.1",
+    "source-map-support": "^0.5.0",
     "style-loader": "^0.19.0",
     "ts-loader": "^3.1.1",
+    "ts-node": "^3.3.0",
     "typescript": "^2.6.1",
-    "vue-loader": "^13.4.0",
+    "vue-loader": "^13.5.0",
     "vue-template-compiler": "^2.2.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.1",
+    "webpack-dev-server": "^2.9.4",
     "yargs": "^10.0.3"
   }
 }
