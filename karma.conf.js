@@ -33,14 +33,14 @@ module.exports = function (config) {
         resolve: {
             extensions: ['', '.js', '.ts']
         },         
-        webpackMiddleware: {
-            noInfo: true
-        },
+        // webpackMiddleware: {
+        //     noInfo: true
+        // },
         // webpack: {
         //     module: webpackConfig.module,
         //     resolve: webpackConfig.resolve
         // },
-        logLevel: config.LOG_DEBUG,
+        logLevel: config.LOG_INFO,
         reporters: ['mocha'],
     })
 }
