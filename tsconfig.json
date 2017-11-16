@@ -7,8 +7,10 @@
         "moduleResolution": "node",
         "target": "es6",
         "baseUrl": ".",
-        "experimentalDecorators": true //,
-        //"lib": [ "es6" ] //,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "lib": [ "es6", "dom" ],
+        "types": ["reflect-metadata", "mocha"]
         // "baseUrl": ".",
         // "paths": {
         //     "routes": ["app/routes.js"]

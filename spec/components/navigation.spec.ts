@@ -1,5 +1,6 @@
-import Navigation from './../../app/components/general/Navigation'
 import { expect } from "chai"
+
+import Navigation from './../../app/components/general/Navigation'
 
 describe('Navigation.vue', () => {
   it('should have default values.', () => {
