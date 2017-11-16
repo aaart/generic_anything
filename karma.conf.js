@@ -6,7 +6,7 @@ module.exports = function (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-        browsers: ["jsdom"], // ["Firefox", "Chrome", "Edge"],
+        browsers: ["Firefox"], // ["Firefox", "Chrome", "Edge"],
         //exclude: ['./node_modules/**', './website-dev/**'],
         frameworks: ['mocha', 'sinon-chai', "karma-typescript"],
         files: [
@@ -15,15 +15,15 @@ module.exports = function (config) {
         ],
         singleRun: true,
         karmaTypescriptConfig: {
-            compilerOptions: {
-                module: "commonjs",
-                "noEmitHelpers": true
-            },
-            bundlerOptions: {
-                transforms: [
-                    require("karma-typescript-es6-transform")()
-                ]
-            },
+            // compilerOptions: {
+            //     module: "node",
+            //     "noEmitHelpers": true
+            // },
+            // bundlerOptions: {
+            //     transforms: [
+            //         require("karma-typescript-es6-transform")()
+            //     ]
+            // },
             tsconfig: "./tsconfig.json",
         },
         preprocessors: {
@@ -36,11 +36,11 @@ module.exports = function (config) {
         webpackMiddleware: {
             noInfo: true
         },
-        webpack: {
-            module: webpackConfig.module,
-            resolve: webpackConfig.resolve
-        },
-        logLevel: config.LOG_INFO,
+        // webpack: {
+        //     module: webpackConfig.module,
+        //     resolve: webpackConfig.resolve
+        // },
+        logLevel: config.LOG_DEBUG,
         reporters: ['mocha'],
     })
 }

@@ -2,6 +2,6 @@
 
 <template>
   <div class="jumbotron">
-    <h1 class="text-center">_Timezones_</h1>
+    <h1 class="text-center">{{ headerMessage }}</h1>
   </div>
 </template>
