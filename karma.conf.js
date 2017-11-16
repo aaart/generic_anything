@@ -13,7 +13,7 @@ module.exports = function (config) {
             { pattern: "./app/**/*.ts" },
             { pattern: "./spec/**/*.spec.ts" }
         ],
-        //singleRun: true,
+        singleRun: true,
         karmaTypescriptConfig: {
             compilerOptions: {
                 module: "commonjs",
