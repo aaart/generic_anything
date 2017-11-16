@@ -8,8 +8,8 @@
         "vue-router": "^3.0.1"
     },
     "scripts": {
-        "build-dev": "gulp build-website --isDev",
-        "build-prod": "gulp build-website --isProd",
+        "build-dev": "gulp build-website --isDev | dotnet run --project ./kestrelhost/",
+        "build-prod": "gulp build-website --isProd | dotnet run --project ./kestrelhost/",
         "test": "karma start"
     },
     "devDependencies": {
