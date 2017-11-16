@@ -1,11 +1,12 @@
 {
     "compilerOptions": {
-        "outDir": "./website-dev/",
+        "outDir": "./website-dev",
         "sourceMap": true,
         "strict": true,
         "module": "es2015",
         "moduleResolution": "node",
         "target": "es6",
+        "baseUrl": ".",
         "experimentalDecorators": true //,
         //"lib": [ "es6" ] //,
         // "baseUrl": ".",
@@ -14,7 +15,9 @@
         // }
     },
     "include": [
-        "./app/**/*",
-        "./spec/*.spec.ts"
+        "./**/*.ts"
+    ],
+    "exclude": [
+        "node_modules"
     ]
 }

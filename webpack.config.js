@@ -41,7 +41,6 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'routes$': path.join(__dirname, 'app/routes.js'),
-      'routed-components$': path.join(__dirname, 'app/routed-components.js'),
       'lodash$': path.join(__dirname, 'node_modules/lodash/lodash.js'),
       
       'vue$': 'vue/dist/vue.esm.js',
@@ -56,7 +55,7 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: '#eval-source-map',
+  devtool: 'source-map',
   plugins: [
       new ExtractTextPlugin("[name].css")
   ]
