@@ -8,8 +8,8 @@
         "vue-router": "^3.0.1"
     },
     "scripts": {
-        "build-dev": "gulp build-website --isDev | dotnet run --project ./kestrelhost/",
-        "build-prod": "gulp build-website --isProd | dotnet run --project ./kestrelhost/",
+        "build-dev": "gulp build-website --isDev | dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
+        "build-prod": "gulp build-website --isProd | dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
         "test": "karma start"
     },
     "devDependencies": {
@@ -56,6 +56,7 @@
         "merge-stream": "^1.0.1",
         "mocha": "^3.2.0",
         "nyc": "^11.3.0",
+        "opn-cli": "^3.1.0",
         "reflect-metadata": "^0.1.10",
         "sinon": "^4.0.0",
         "sinon-chai": "^2.8.0",
