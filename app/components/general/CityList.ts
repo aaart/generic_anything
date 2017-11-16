@@ -1,5 +1,4 @@
 import Vue from "vue";
-import * as _ from "lodash";
 
 export default Vue.extend({
     name: "city-list",

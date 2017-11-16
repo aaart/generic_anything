@@ -6,14 +6,14 @@ module.exports = function (config) {
     // 1. install corresponding karma launcher
     //    http://karma-runner.github.io/0.13/config/browsers.html
     // 2. add it to the `browsers` array below.
-        browsers: ["Firefox"], // ["Firefox", "Chrome", "Edge"],
+        browsers: ["jsdom"], // ["Firefox", "Chrome", "Edge"],
         //exclude: ['./node_modules/**', './website-dev/**'],
         frameworks: ['mocha', 'sinon-chai', "karma-typescript"],
         files: [
             { pattern: "./app/**/*.ts" },
             { pattern: "./spec/**/*.spec.ts" }
         ],
-        singleRun: true,
+        //singleRun: true,
         karmaTypescriptConfig: {
             compilerOptions: {
                 module: "commonjs",

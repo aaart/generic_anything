@@ -7,7 +7,7 @@ export default Vue.extend({
         }
     },
     methods: {
-        toggleMenu: function(): void {
+        toggleMenu(): void {
             this.menuOpened = !this.menuOpened;
         }
     }

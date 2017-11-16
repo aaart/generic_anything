@@ -1,11 +1,5 @@
-class MainHeaderViewModel {
-    name: string = "main-header";
+import Vue from "vue"
 
-    data() {
-      return {
-
-      };
-    }
-}
-
-export default new MainHeaderViewModel();
+export default Vue.extend({
+  name: "main-header"
+});

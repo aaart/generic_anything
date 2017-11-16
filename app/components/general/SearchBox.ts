@@ -7,16 +7,14 @@ export default Vue.extend({
             default: "default message"
         }
     },
-    data(): any {
+    data: function(): any {
         return {
             anotherMessage: this.message.default
         };
     },
     methods: {
         searchClicked(): void {
-            //console.log(this.message);
             this.anotherMessage = this.message + " another.";
-            //console.log(this.anotherMessage);
         }
     }
 });

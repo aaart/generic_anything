@@ -1,19 +1,12 @@
-//import routes from 'routes';
+import Vue from "vue";
 import SearchBox from './../general/SearchBox';
 import CityList from './../general/CityList';
 
-let data = () => {
-  return {
-    msg: 'This is HomePage.vue'
-  }
-};
-
-let path = '/';
-let component = { 
-    data,
-    components: { SearchBox, CityList }
-  };
-
-//routes.push({ path, component });
-
-export default component;
+export default Vue.extend({
+  name: "home-page",
+  data: function(): any {
+    return {
+    }
+  },
+  components: { SearchBox, CityList }
+});
