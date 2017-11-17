@@ -1,15 +1,9 @@
-import Vue from "vue";
+import { Vue, Component } from "vue-property-decorator";
 
-export default Vue.extend({
-    props: {
-    },
-    data: function(): any {
-        return {
-        };
-    },
-    methods: {
-        searchClicked(): void {
-            
-        }
+@Component
+export default class SearchBoxViewModel extends Vue {
+    
+    searchClicked(): void {
     }
-});
+    
+}

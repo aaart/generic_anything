@@ -1,12 +1,11 @@
-import Vue from "vue";
-import SearchBox from './../general/SearchBox';
-import CityList from './../general/CityList';
+import { Vue, Component } from "vue-property-decorator";
 
-export default Vue.extend({
-  name: "home-page",
-  data: function(): any {
-    return {
-    }
-  },
+import SearchBox from './../general/SearchBox.vue';
+import CityList from './../general/CityList.vue';
+
+@Component({
   components: { SearchBox, CityList }
-});
+})
+export default class HomePageViewModel extends Vue {
+  
+}

@@ -1,13 +1,12 @@
-import Vue from "vue";
+import { Vue, Component, Prop } from "vue-property-decorator";
 
-import Navigation from "./components/general/Navigation"
-import MainHeader from "./components/general/MainHeader"
+import Navigation from "./components/general/Navigation.vue"
+import MainHeader from "./components/general/MainHeader.vue"
 
-export default Vue.extend({
-  name: 'layout',
-  data: function(): any {
-    return {
-    }
-  },
-  components: { Navigation, MainHeader }
-});
+@Component({
+  components: { Navigation, MainHeader },
+  name: "Layout"
+})
+export default class LayoutViewModel extends Vue {
+    //@Prop() name: string;
+}

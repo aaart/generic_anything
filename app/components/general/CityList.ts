@@ -1,25 +1,16 @@
-import Vue from "vue";
+import { Vue, Component, Prop } from "vue-property-decorator";
+import City from "./../../dataTypes/City"
 
-export default Vue.extend({
-    name: "city-list",
-    props: {
-        columnCount: {
-            type: Number,
-            default: 3
-        }
-    },
-    data: function(): any {
-        return { 
-            cities: []
-        };
-    },
-    methods: { 
-        
-    },
-    computed: {
-        
-    },
-    mounted: function(): void {
-        this.cities = [{ name: "Lublin" }, { name: "New York" }, { name: "London" }, { name: "Tokyo" }];
+@Component
+export default class CityListViewModel extends Vue {
+
+    public cities: Array<City> = new Array<City>();
+
+    public mounted(): void {
+        this.cities.push(new City ({ name: "Lublin" }));
+        this.cities.push(new City ({ name: "New York" }));
+        this.cities.push(new City ({ name: "London" }));
+        this.cities.push(new City ({ name: "Tokyo" }));
     }
-});
+
+}
