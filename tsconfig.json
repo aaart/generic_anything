@@ -10,16 +10,18 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "lib": [ "es6", "dom" ],
-        "types": ["reflect-metadata", "mocha"]
-        // "baseUrl": ".",
-        // "paths": {
-        //     "routes": ["app/routes.js"]
-        // }
+        "types": ["reflect-metadata", "mocha"],
+        "declaration": true,
+        "paths": {
+            "ServiceIdentifier": ["app/ServiceIdentifier"]
+        }
     },
     "include": [
-        "./**/*"
+        "./app/**/*",
+        "./spec/**/*",
+        "./node_modules/reflect-metadata/index.d.ts"
     ],
     "exclude": [
-        "node_modules"
+        //"node_modules"
     ]
-}
+}   

@@ -7,5 +7,5 @@ import MainHeader from "./components/general/MainHeader.vue"
   components: { Navigation, MainHeader }
 })
 export default class LayoutViewModel extends Vue {
-    //@Prop() name: string;
+    
 }

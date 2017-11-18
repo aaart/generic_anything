@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlugin;
 //var _ = require('lodash');
 
 module.exports = {
@@ -48,10 +49,12 @@ module.exports = {
     extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       'lodash$': path.join(__dirname, 'node_modules/lodash/lodash.js'),
-      
       'vue$': 'vue/dist/vue.esm.js',
-      'vue-router$': 'vue-router/dist/vue-router.esm.js',
-    }
+      'vue-router$': 'vue-router/dist/vue-router.esm.js'
+    },
+    plugins: [
+      new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
+    ]
   },
   devServer: {
     historyApiFallback: true,
