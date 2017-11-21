@@ -31,7 +31,7 @@ namespace kestrelhost
                     builder.UseDefaultFiles(new DefaultFilesOptions
                     {
                         RequestPath = string.Empty,
-                        DefaultFileNames = new List<string> { "index.html" },
+                        DefaultFileNames = new List<string> { "src\\index.html" },
                         FileProvider = appDirProvider
                     });
 

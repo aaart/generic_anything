@@ -6,8 +6,8 @@ var TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlug
 
 module.exports = {
   entry: {
-    'application': './app/app.ts', 
-    'application-styles': "./app/css/timezones.css"
+    'application': './app/src/app.ts', 
+    'application-styles': "./app/src/css/timezones.css"
   },
   output: {
     path: path.resolve(__dirname, './website-dev/'),
@@ -40,7 +40,8 @@ module.exports = {
         loader: 'ts-loader',
         exclude: /node_modules/,
         options: {
-          appendTsSuffixTo: [/\.vue$/],
+          appendTsSuffixTo: [/\.vue$/] //,
+          //tscofconfigFile: "./tsconfig.json"
         }
       }
     ]
@@ -51,9 +52,10 @@ module.exports = {
       'lodash$': path.join(__dirname, 'node_modules/lodash/lodash.js'),
       'vue$': 'vue/dist/vue.esm.js',
       'vue-router$': 'vue-router/dist/vue-router.esm.js'
+      
     },
     plugins: [
-      new TsConfigPathsPlugin(/* { tsconfig, compiler } */)
+      new TsConfigPathsPlugin(/*{ tsconfig } /**/)
     ]
   },
   devServer: {

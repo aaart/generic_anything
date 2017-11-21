@@ -1,5 +1,5 @@
 import { Vue, Component, Prop } from "vue-property-decorator";
-import City from "./../../dataTypes/City"
+import City from "dataTypes/City"
 
 @Component
 export default class CityListViewModel extends Vue {

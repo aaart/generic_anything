@@ -6,19 +6,29 @@
         "module": "commonjs",
         "moduleResolution": "node",
         "target": "es2015",
-        "baseUrl": ".",
+        "baseUrl": "./app/",
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "lib": [ "es6", "dom" ],
         "types": ["reflect-metadata", "mocha"],
         "declaration": true,
+        "allowSyntheticDefaultImports": true,
+        "alwaysStrict": true,
+        "noImplicitThis": true,
         "paths": {
-            "ServiceIdentifier": ["app/ServiceIdentifier"]
+            "Routes": ["src/Routes"],
+            "VueApp": ["src/VueApp"],
+            "components/*": ["src/components/*"],
+            "dataTypes/*": ["src/dataTypes/*"],
+            "specTools": ["spec/specTools"]
         }
     },
+    // "files": [
+    //     "./app/app.ts"
+    // ],
     "include": [
         "./app/**/*",
-        "./spec/**/*",
+        //"./spec/**/*",
         "./node_modules/reflect-metadata/index.d.ts"
     ],
     "exclude": [
