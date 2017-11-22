@@ -10,7 +10,7 @@ module.exports = {
     'application-styles': "./app/src/css/timezones.css"
   },
   output: {
-    path: path.resolve(__dirname, './website-dev/'),
+    path: path.resolve(__dirname, './_website/'),
     publicPath: '/',
     filename: '[name].js',
     sourceMapFilename: '[name].js.map'

@@ -14,8 +14,8 @@ var cfg = {
     isDev: yargs.isDev,
     isProd: yargs.isProd,
     nodeModules: "node_modules/",
-    target: "website-dev/",
-    externalsTarget: "website-dev/3rd/"
+    target: "_website/",
+    externalsTarget: "_website/3rd/"
 };
 
 var tools = {

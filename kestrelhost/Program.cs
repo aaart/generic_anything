@@ -31,14 +31,14 @@ namespace kestrelhost
                     builder.UseDefaultFiles(new DefaultFilesOptions
                     {
                         RequestPath = string.Empty,
-                        DefaultFileNames = new List<string> { "website-dev\\index.html" },
+                        DefaultFileNames = new List<string> { "_website\\index.html" },
                         FileProvider = appDirProvider
                     });
 
                     var opts = new StaticFileOptions
                     {
                         RequestPath = string.Empty,
-                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\")
+                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\_website\\")
                     };
                     builder.UseStaticFiles(opts);
                     
