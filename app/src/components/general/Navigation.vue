@@ -12,9 +12,12 @@
             <span></span>
         </div>
         <div class="menu" v-bind:class="{ open: menuOpened }">
-            <ul>
-                <li><router-link :to="{ name: 'home' }">Home</router-link></li>
-                <li><router-link :to="{ name: 'about' }">About</router-link></li>
+            <ul v-if="navigationItems.length != 0">
+                <li v-for="navigationItem in navigationItems" :key="navigationItem.name" >
+                    <router-link :to="{ name: navigationItem.name }">
+                        {{ navigationItem.displayName }}
+                    </router-link>
+                </li>
             </ul>
         </div>
     </div>

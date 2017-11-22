@@ -9,7 +9,7 @@ import { lazyInject } from "inversify.config"
 export default class PoCPageViewModel extends Vue {
     
     @lazyInject(SERVICE_IDENTIFIER.PET)
-    pet: Pet;
+    private pet: Pet;
 
     public message: string = "empty";
 

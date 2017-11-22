@@ -6,8 +6,8 @@ import { injectable } from "inversify";
 export default class LocalNavigationLoader implements NavigationLoader {
     Load(): NavigationItem[] {
         return new Array<NavigationItem>(
-            new NavigationItem("Home", "/"),
-            new NavigationItem("About", "/About")
+            new NavigationItem("home", "Home"),
+            new NavigationItem("about", "About")
         );
     }
 

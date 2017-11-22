@@ -20,6 +20,7 @@
             "VueApp": ["src/VueApp"],
             "components/*": ["src/components/*"],
             "dataTypes/*": ["src/dataTypes/*"],
+            "services/*": ["src/services/*"],
             "specTools": ["spec/specTools"]
         }
     },

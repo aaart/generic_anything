@@ -15,3 +15,14 @@ describe('Navigation.vue', () => {
 
     })
 });
+
+describe('Navigation.vue', () => {
+    it('Default local navigation is not empty.', () => {
+        var vm = mountApp({
+            template: "<navigation />",
+            components: { "navigation": Navigation }
+        });
+        expect(vm.$el.querySelector(".menu > ul > li")).to.not.be.null;
+
+    })
+});
