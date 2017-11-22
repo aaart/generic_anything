@@ -1,4 +1,5 @@
-import { Vue, Component, Prop } from "vue-property-decorator";
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
 import Navigation from "./components/general/Navigation.vue"
 import MainHeader from "./components/general/MainHeader.vue"

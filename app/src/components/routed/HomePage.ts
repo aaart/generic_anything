@@ -1,4 +1,5 @@
-import { Vue, Component } from "vue-property-decorator";
+import Vue from 'vue'
+import Component from 'vue-class-component'
 
 import SearchBox from './../general/SearchBox.vue';
 import CityList from './../general/CityList.vue';

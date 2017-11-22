@@ -1,15 +1,14 @@
-import { Inject } from 'vue-inversify-decorator'
-import { Vue, Component } from "vue-property-decorator";
+import Vue from 'vue'
+import Component from 'vue-class-component'
 import Pet from "src/poc/Pet"
 import Dog from "src/poc/Dog"
 import SERVICE_IDENTIFIER from "ServiceIdentifier"
+import { lazyInject } from "inversify.config"
 
-@Component({
-    name: "PoCPage"
-})
+@Component({})
 export default class PoCPageViewModel extends Vue {
     
-    @Inject(SERVICE_IDENTIFIER.PET)
+    @lazyInject(SERVICE_IDENTIFIER.PET)
     pet: Pet;
 
     public message: string = "empty";

@@ -1,0 +1,17 @@
+import Vue from "vue";
+import VueRouter from "vue-router";
+import { expect } from "chai"
+import { mountApp } from "specTools"
+
+import Navigation from 'src/components/general/Navigation.vue'
+
+describe('Navigation.vue', () => {
+    it('Navigation element exists.', () => {
+        var vm = mountApp({
+            template: "<navigation />",
+            components: { "navigation": Navigation }
+        });
+        expect(vm.$el).to.not.be.null;
+
+    })
+});
