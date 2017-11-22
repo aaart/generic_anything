@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./website-dev",
+        "outDir": "./_website",
         "sourceMap": true,
         "strict": true,
         "module": "commonjs",
