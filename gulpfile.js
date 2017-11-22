@@ -14,6 +14,7 @@ var cfg = {
     isDev: yargs.isDev,
     isProd: yargs.isProd,
     nodeModules: "node_modules/",
+    target: "website-dev/",
     externalsTarget: "website-dev/3rd/"
 };
 
@@ -51,6 +52,7 @@ gulp.task(
     "build-website", 
     [
         "print-cfg",
+        "copy-index.html",
         "copy-jquery", 
         "copy-vue",
         "copy-vue-router",
@@ -60,6 +62,11 @@ gulp.task(
 
 gulp.task("print-cfg", () => {
     console.log(cfg);
+});
+
+gulp.task("copy-index.html", () => {
+    gulp.src(["app/src/index.html"])
+        .pipe(gulp.dest(cfg.target));
 });
 
 gulp.task("copy-jquery", () => {
@@ -122,6 +129,5 @@ gulp.task("copy-bootstrap", () => {
 });
 
 gulp.task("run-webpack", () => {
-    //cross-env NODE_ENV=production webpack --progress --hide-modules
-    run('webpack --progress').exec();
+    run('webpack').exec();
 });

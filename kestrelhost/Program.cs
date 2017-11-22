@@ -26,22 +26,15 @@ namespace kestrelhost
                 .UseEnvironment("Development")
                 .Configure(builder =>
                 {
-                    var appDirProvider = new PhysicalFileProvider($"{contentRoot}\\app");
+                    var appDirProvider = new PhysicalFileProvider($"{contentRoot}");
 
                     builder.UseDefaultFiles(new DefaultFilesOptions
                     {
                         RequestPath = string.Empty,
-                        DefaultFileNames = new List<string> { "src\\index.html" },
+                        DefaultFileNames = new List<string> { "website-dev\\index.html" },
                         FileProvider = appDirProvider
                     });
 
-                    // var opts = new StaticFileOptions
-                    // {
-                    //     RequestPath = "/3rd",
-                    //     FileProvider = new PhysicalFileProvider($"{contentRoot}\\website-dev\\3rd\\")
-                    // };
-                    // builder.UseStaticFiles(opts);
-                    
                     var opts = new StaticFileOptions
                     {
                         RequestPath = string.Empty,
