@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import SERVICE_IDENTIFIER from "ServiceIdentifier"
-import NavigationLoader from "services/NavigationLoader"
-import NavigationItem from "dataTypes/NavigationItem"
+import NavigationLoader from "scopes/navigation/services/NavigationLoader"
+import NavigationItem from "scopes/navigation/dto/NavigationItem"
 import { lazyInject } from "inversify.config"
 
 @Component({})

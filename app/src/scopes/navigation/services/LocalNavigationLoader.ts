@@ -1,5 +1,5 @@
 import NavigationLoader from "./NavigationLoader"
-import NavigationItem from "dataTypes/NavigationItem";
+import NavigationItem from "scopes/navigation/dto/NavigationItem";
 import { injectable } from "inversify";
 
 @injectable()

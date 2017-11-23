@@ -1,7 +1,7 @@
 import { expect } from "chai"
 import { mountApp } from "specTools"
 
-import PoCPage from 'src/components/routed/PoCPage.vue'
+import PoCPage from 'pages/pocPage/PoCPage.vue'
 
 describe('PoCPage.vue', () => {
     it('Container default bindings.', () => {

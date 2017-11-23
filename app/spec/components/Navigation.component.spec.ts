@@ -3,7 +3,7 @@ import VueRouter from "vue-router";
 import { expect } from "chai"
 import { mountApp } from "specTools"
 
-import Navigation from 'src/components/general/Navigation.vue'
+import Navigation from 'scopes/navigation/components/Navigation.vue'
 
 describe('Navigation.vue', () => {
     it('Navigation element exists.', () => {

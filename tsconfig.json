@@ -21,7 +21,10 @@
             "components/*": ["src/components/*"],
             "dataTypes/*": ["src/dataTypes/*"],
             "services/*": ["src/services/*"],
-            "specTools": ["spec/specTools"]
+            "scopes/*": ["src/scopes/*"],
+            "pages/*": ["src/pages/*"],
+
+            "specTools": ["spec/specTools"],
         }
     },
     // "files": [

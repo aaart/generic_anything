@@ -1,6 +1,6 @@
-import HomePage from "./components/routed/HomePage.vue"
-import About from "./components/routed/About.vue"
-import PoCPage from "./components/routed/PoCPage.vue"
+import HomePage from "pages/homePage/HomePage.vue"
+import About from "pages/about/About.vue"
+import PoCPage from "pages/pocPage/PoCPage.vue"
 
 export default new Array<any>(
     { path: "/", name: "home", component: HomePage },

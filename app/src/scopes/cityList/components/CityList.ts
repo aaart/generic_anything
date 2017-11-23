@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
-import City from "dataTypes/City"
+import City from "scopes/cityList/dto/City"
 
 @Component
 export default class CityListViewModel extends Vue {

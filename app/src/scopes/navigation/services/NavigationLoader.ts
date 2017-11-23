@@ -1,4 +1,4 @@
-import NavigationItem from "dataTypes/NavigationItem";
+import NavigationItem from "scopes/navigation/dto/NavigationItem";
 
 export default interface NavigationLoader {
     Load(): Array<NavigationItem>;

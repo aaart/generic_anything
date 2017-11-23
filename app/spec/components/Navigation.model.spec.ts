@@ -1,5 +1,5 @@
 import { expect } from "chai"
-import Navigation from 'components/general/Navigation'
+import Navigation from 'scopes/navigation/components/Navigation'
 
 describe('Navigation.ts', () => {
   it('should have default values.', () => {

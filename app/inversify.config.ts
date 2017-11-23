@@ -4,10 +4,10 @@ import { Container, injectable } from "inversify";
 
 import SERVICE_IDENTIFIER from "ServiceIdentifier"
 
-import NavigationLoader from "services/NavigationLoader"
-import LocalNavigationLoader from "services/LocalNavigationLoader"
+import NavigationLoader from "scopes/navigation/services/NavigationLoader"
+import LocalNavigationLoader from "scopes/navigation/services/LocalNavigationLoader"
 
-import Navigation from "components/general/Navigation"
+import Navigation from "scopes/navigation/components/Navigation"
 
 import Pet from "src/poc/Pet"
 import Dog from "src/poc/Dog"

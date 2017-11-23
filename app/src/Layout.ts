@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 
-import Navigation from "./components/general/Navigation.vue"
-import MainHeader from "./components/general/MainHeader.vue"
+import Navigation from "scopes/navigation/components/Navigation.vue"
+import MainHeader from "scopes/mainHeader/components/MainHeader.vue"
 
 @Component({
   components: { Navigation, MainHeader }
