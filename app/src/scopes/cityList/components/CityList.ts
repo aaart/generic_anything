@@ -16,9 +16,12 @@ export default class CityListViewModel extends Vue {
     public beforeMount(): void {
         var _this: CityListViewModel = this;
         this.cityListService.GetDefaults()
-            .then((response: ServiceResponse<Array<City>>): void => {
-                _this.cities.push(...response.data);
-            });
+            .then(
+                (response: ServiceResponse<Array<City>>): void => {
+                    _this.cities.push(...response.data);
+                }
+            )
+            .catch(rejected => { alert("caught!"); });
     }
 
 }
