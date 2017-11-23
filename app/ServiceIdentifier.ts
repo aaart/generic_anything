@@ -1,9 +1,8 @@
-const SERVICE_IDENTIFIER = {
-    // **** SERVICES ****
+const SERVICE_IDENTIFIER = {    
+    CITY_LIST_SERVICE: Symbol("CityListService"),
     NAVIGATION_LOADER: Symbol("NavigationLoader"),
 
 
-    // **** POC ****
     PET: Symbol("Pet")
 };
 
