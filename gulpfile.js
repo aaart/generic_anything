@@ -57,7 +57,8 @@ gulp.task(
         "copy-vue",
         "copy-vue-router",
         "copy-bootstrap",
-        "run-webpack"
+        "run-webpack",
+        "build-fakeApi"
     ]);
 
 gulp.task("print-cfg", () => {
@@ -130,4 +131,11 @@ gulp.task("copy-bootstrap", () => {
 
 gulp.task("run-webpack", () => {
     run('webpack').exec();
+});
+
+gulp.task("build-fakeApi", () => {
+    if (cfg.isDev) {
+        gulp.src("./fakeApi/**")
+            .pipe(gulp.dest(cfg.target + "api/fake/"));
+    }
 });
