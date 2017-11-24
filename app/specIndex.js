@@ -12,4 +12,6 @@ specContext.keys().forEach(specContext)
 specContext = require.context('./spec/scopes/navigation/components', true, /\.spec$/)
 specContext.keys().forEach(specContext)
 
+specContext = require.context('./spec/scopes/errors/bus', true, /\.spec$/)
+specContext.keys().forEach(specContext)
 

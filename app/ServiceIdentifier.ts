@@ -1,9 +1,10 @@
 const SERVICE_IDENTIFIER = {    
-    CITY_LIST_SERVICE: Symbol("CityListService"),
-    NAVIGATION_LOADER: Symbol("NavigationLoader"),
+    CITY_LIST_SERVICE:          Symbol("CityListService"),
+    ERROR_BUS:                  Symbol("ErrorBus"),
+    NAVIGATION_LOADER:          Symbol("NavigationLoader"),
 
 
-    PET: Symbol("Pet")
+    PET:                        Symbol("Pet")
 };
 
 export default SERVICE_IDENTIFIER;
