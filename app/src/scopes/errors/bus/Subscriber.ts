@@ -1,5 +1,5 @@
 export interface SubscriptionHandler {
-    (): void;
+    (message: string): void;
 }
 
 export default interface Subscriber {
