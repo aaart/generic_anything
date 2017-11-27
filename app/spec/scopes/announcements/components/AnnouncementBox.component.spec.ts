@@ -11,7 +11,7 @@ describe("AnnouncementBox.vue", () => {
     it("Expect received annoucement count incremented", () => {
         var bus: AnnouncementBus = container.get<AnnouncementBus>(SERVICE_IDENTIFIER.ANNOUNCEMENT_BUS);
         var app = mountApp({
-            template: "<AnnouncementBox />",
+            template: "<announcement-box />",
             components: { "AnnouncementBox": AnnouncementBox }
         });
         var box: AnnouncementBoxModel = <AnnouncementBoxModel>app.$children[0];
