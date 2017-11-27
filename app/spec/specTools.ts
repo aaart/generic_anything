@@ -4,11 +4,19 @@ import VueApp from "VueApp"
 import Routes from "Routes"
 import * as _ from "lodash";
 
-function mountApp(appData: any): VueApp {
+interface MountAppData {
+    template: string;
+    components: {}
+}
+
+function mountApp(appData: MountAppData): VueApp {
     Vue.use(VueRouter);
     var mergedData = _.merge(appData, { router: new VueRouter({routes: Routes}) });
     return new VueApp(mergedData).$mount();
 }
 
 
-export { mountApp }
+export { 
+    MountAppData,
+    mountApp 
+}
