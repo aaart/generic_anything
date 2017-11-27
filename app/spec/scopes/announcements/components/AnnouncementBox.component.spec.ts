@@ -18,7 +18,6 @@ describe("AnnouncementBox.vue", () => {
         var startingCount = box.receivedAnnouncements.length;
         bus.publish(new Announcement("tst only"));
 
-        expect(box.receivedAnnouncements.length).to.equal(startingCount + 1);
-
+        expect(box.receivedAnnouncements.length).to.be.equal(startingCount + 1);
     });
 });
