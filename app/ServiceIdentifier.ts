@@ -1,6 +1,6 @@
 const SERVICE_IDENTIFIER = {    
+    ANNOUNCEMENT_BUS:           Symbol("AnnouncementBus"),
     CITY_LIST_SERVICE:          Symbol("CityListService"),
-    ERROR_BUS:                  Symbol("ErrorBus"),
     NAVIGATION_LOADER:          Symbol("NavigationLoader"),
 
 

@@ -1,5 +1,7 @@
+import Announcement from "scopes/announcements/entities/Announcement"
+
 export interface SubscriptionHandler {
-    (message: string): void;
+    (announcement: Announcement): void;
 }
 
 export default interface Subscriber {

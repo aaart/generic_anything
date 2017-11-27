@@ -1,19 +1,20 @@
 import { injectable } from "inversify.config"
 import * as _ from "lodash"
 
-import ErrorBus from "./ErrorBus"
-import Subscriber from "./Subscriber"
+import AnnouncementBus from "./AnnouncementBus"
+import Subscriber from "scopes/announcements/entities/Subscriber"
+import Announcement from "scopes/announcements/entities/Announcement"
 
 
 @injectable()
-export default class SimpleErrorBus implements ErrorBus {
+export default class SimpleAnnouncementBus implements AnnouncementBus {
 
     private subscribers: Array<Subscriber> = new Array<Subscriber>();
 
-    public publish(message: string): void {
+    public publish(announcement: Announcement): void {
         this.subscribers.forEach(
             subscriber => {
-                subscriber.handler(message);
+                subscriber.handler(announcement);
             }
         ); 
     }

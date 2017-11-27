@@ -8,6 +8,11 @@
         </div>
         <div>
           <div class="container width-80-percent">
+            <div class="row">
+              <div class="col-xs-12">
+                <announcement-box></announcement-box>
+              </div>
+            </div>
             <div id="layout-header" class="row">
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                 <main-header></main-header>
