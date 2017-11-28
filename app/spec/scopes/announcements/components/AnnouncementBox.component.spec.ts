@@ -17,7 +17,6 @@ describe("AnnouncementBox.vue", () => {
         var box: AnnouncementBoxViewModel = <AnnouncementBoxViewModel>app.$children[0];
         var startingCount = box.receivedAnnouncements.length;
         bus.publish(new Announcement("tst only"));
-
         expect(box.receivedAnnouncements.length).to.be.equal(startingCount + 1);
     });
 });

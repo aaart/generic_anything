@@ -4,31 +4,35 @@ import { lazyInject, SERVICE_IDENTIFIER } from 'inversify.config'
 import AnnouncementBus from 'scopes/announcements/bus/AnnouncementBus';
 import Announcement from 'scopes/announcements/entities/Announcement';
 import Subscriber from 'scopes/announcements/entities/Subscriber';
+import ActiveAnnouncementManager from 'scopes/announcements/entities/ActiveAnnouncementManager';
 
-@Component({
-})
+@Component({})
 export default class AnnouncementBox extends Vue {
 
     @lazyInject(SERVICE_IDENTIFIER.ANNOUNCEMENT_BUS)
     private announcementBus: AnnouncementBus;
 
-    /// *** REACTIVE DATA ***
-    public receivedAnnouncements: Array<Announcement> = new Array<Announcement>();
+    @lazyInject(SERVICE_IDENTIFIER.ACTIVE_ANNOUNCEMENT_MANAGER)
+    private announcementManager: ActiveAnnouncementManager;
 
+    /// *** REACTIVE DATA ***
     /// *** END OF REACTIVE DATA ***
 
-    public get calcs(): Array<Announcement> {
-        return this.receivedAnnouncements;
+    /// *** COMPUTED ***
+
+    public get receivedAnnouncements(): Array<Announcement> {
+        return this.announcementManager.activeAnnouncements;
     }
+
+    /// END OF COMPUTED
 
     public beforeMount(): void {
+        var _this = this;
         this.announcementBus.registerSubscriber({
             name: "announcement-box",
-            handler: this.subscriptionHandler
+            handler: announcement => {
+                _this.announcementManager.add(announcement);
+            }
         });
-    }
-
-    private subscriptionHandler(announcement: Announcement): void {
-        this.receivedAnnouncements.push(announcement);
     }
 }

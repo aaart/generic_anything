@@ -18,3 +18,6 @@ specContext.keys().forEach(specContext)
 specContext = require.context('./spec/scopes/announcements/components', true, /\.spec$/)
 specContext.keys().forEach(specContext)
 
+specContext = require.context('./spec/scopes/announcements/entities', true, /\.spec$/)
+specContext.keys().forEach(specContext)
+
