@@ -11,9 +11,9 @@
     "vue-router": "^3.0.1"
   },
   "scripts": {
-    "build-dev": "gulp build-website --isDev",
-    "run-dev": "gulp build-website --isDev | dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
-    "run-prod": "gulp build-website --isProd | dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
+    "build-website-dev": "gulp build-website --isDev",
+    "run-website-dev": "gulp build-website --isDev & dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
+    "run-website-prod": "gulp build-website --isProd & dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
     "test": "karma start"
   },
   "devDependencies": {
