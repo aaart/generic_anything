@@ -2,7 +2,7 @@
 <style scoped src="./AnnouncementBox.css"></style>
 
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid announcement-box">
         <div class="row" v-for="(announcement, index) in receivedAnnouncements" :key="index">
             <div class="col-xs-12">
                 {{ announcement.message }}

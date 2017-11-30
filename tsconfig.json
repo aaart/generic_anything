@@ -20,10 +20,11 @@
             "VueApp": ["src/VueApp"],
             "ServiceResponse": ["src/common/ServiceResponse"],
 
+            "common/*": ["src/common/*"],
             "scopes/*": ["src/scopes/*"],
             "pages/*": ["src/pages/*"],
 
-            "specTools": ["spec/specTools"],
+            "specTools": ["spec/specTools"]
         }
     },
     // "files": [

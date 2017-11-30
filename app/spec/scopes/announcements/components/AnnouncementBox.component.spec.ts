@@ -20,3 +20,17 @@ describe("AnnouncementBox.vue", () => {
         expect(box.receivedAnnouncements.length).to.be.equal(startingCount + 1);
     });
 });
+
+// describe("AnnouncementBox.vue", () => {
+//     it("Expect received annoucement html elements", () => {
+//         var app = mountApp({
+//             template: "<announcement-box />",
+//             components: { "AnnouncementBox": AnnouncementBox }
+//         });
+//         var box: AnnouncementBoxViewModel = <AnnouncementBoxViewModel>app.$children[0];
+//         box.receivedAnnouncements.push(new Announcement("tst only"));
+//         expect(app.$el.innerHTML)
+//             .to.not.be.empty
+//             .and.not.to.be.null;
+//     });
+// });

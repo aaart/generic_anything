@@ -12,6 +12,9 @@ export default class SimpleAnnouncementBus implements AnnouncementBus {
     private subscribers: Array<Subscriber> = new Array<Subscriber>();
 
     public publish(announcement: Announcement): void {
+        if (this.subscribers.length == 0) {
+            console.warn("[SimpleAnnouncementBus] No Subscribers registered!");
+        }
         this.subscribers.forEach(
             subscriber => {
                 subscriber.handler(announcement);

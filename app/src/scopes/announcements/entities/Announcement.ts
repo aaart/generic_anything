@@ -1,11 +1,11 @@
-import AnnouncementLevel from "scopes/announcements/enum/AnnouncementLevel"
+import AnnouncementLevel from "scopes/announcements/const/AnnouncementLevel"
 
-export default class ErrorInstance {
-    constructor(message: string, level?: AnnouncementLevel) {
+export default class Announcement {
+    constructor(message: string, level?: string) {
         this.message = message;
         this.level = level ? level : AnnouncementLevel.INFO;
     }
 
     public message: string;
-    public level: AnnouncementLevel;
+    public level: string;
 }

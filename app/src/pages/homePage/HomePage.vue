@@ -5,7 +5,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-xs-12">
-          <search-box></search-box>
+          <announcement-publisher></announcement-publisher>
         </div>
       </div>
       <div class="row top-buffer-large">
