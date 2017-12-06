@@ -11,7 +11,7 @@
         "emitDecoratorMetadata": true,
         "lib": [ "es6", "dom" ],
         "types": ["reflect-metadata", "mocha"],
-        "declaration": true,
+        //"declaration": true,
         "allowSyntheticDefaultImports": true,
         "alwaysStrict": true,
         "noImplicitThis": true,
