@@ -16,11 +16,11 @@ namespace kestrelhost
     {
         public static void Main(string[] args)
         {
-            string contentRoot = args.FirstOrDefault() ?? Directory.GetCurrentDirectory(); ;
+            string contentRoot = args.FirstOrDefault() ?? Directory.GetCurrentDirectory();
             WebHost.CreateDefaultBuilder()
                 .CaptureStartupErrors(true)
                 .UseSetting(WebHostDefaults.DetailedErrorsKey, "true")
-                .UseUrls("http://localhost:5050")
+                .UseUrls("http://*:5050")
                 .UseContentRoot(contentRoot)
                 .UseKestrel()
                 .UseEnvironment("Development")
@@ -31,24 +31,24 @@ namespace kestrelhost
                     builder.UseDefaultFiles(new DefaultFilesOptions
                     {
                         RequestPath = string.Empty,
-                        DefaultFileNames = new List<string> { "_website\\index.html" },
+                        DefaultFileNames = new List<string> { "\\wwwroot\\index.html" },
                         FileProvider = appDirProvider
                     });
 
                     var opts = new StaticFileOptions
                     {
                         RequestPath = string.Empty,
-                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\_website\\")
+                        FileProvider = new PhysicalFileProvider($"{contentRoot}\\wwwroot\\")
                     };
                     builder.UseStaticFiles(opts);
-                    
+
                     opts = new StaticFileOptions
                     {
                         RequestPath = "",
                         FileProvider = appDirProvider
                     };
                     builder.UseStaticFiles(opts);
-                    
+
                 })
                 .Build()
                 .Run();
