@@ -10,12 +10,13 @@ var rename = require('gulp-rename');
 var cleanDest = require('gulp-clean-dest');
 var webpack = require('gulp-webpack');
 
+// REMEMBER: this script does NOT support multiple destinations
 var cfg = {
     isDev: yargs.isDev,
     isProd: yargs.isProd,
     nodeModules: "node_modules/",
-    target: "_website/",
-    externalsTarget: "_website/3rd/"
+    target: "geany.dotnet_core/geany.dotnet_core/wwwroot/",
+    externalsTarget: "geany.dotnet_core/geany.dotnet_core/wwwroot/3rd/"
 };
 
 var tools = {
@@ -52,17 +53,21 @@ gulp.task(
     "build-website", 
     [
         "print-cfg",
+        "clear-dest",
         "copy-index.html",
         "copy-jquery", 
         "copy-vue",
         "copy-vue-router",
         "copy-bootstrap",
-        "run-webpack",
-        "build-fakeApi"
+        "run-webpack"
     ]);
 
 gulp.task("print-cfg", () => {
     console.log(cfg);
+});
+
+gulp.task("clear-dest", () => {
+    
 });
 
 gulp.task("copy-index.html", () => {
@@ -131,11 +136,4 @@ gulp.task("copy-bootstrap", () => {
 
 gulp.task("run-webpack", () => {
     run('webpack').exec();
-});
-
-gulp.task("build-fakeApi", () => {
-    if (cfg.isDev) {
-        gulp.src("./fakeApi/**")
-            .pipe(gulp.dest(cfg.target + "api/fake/"));
-    }
 });

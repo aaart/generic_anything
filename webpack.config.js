@@ -10,7 +10,7 @@ module.exports = {
     'application-styles': "./app/src/css/timezones.css"
   },
   output: {
-    path: path.resolve(__dirname, './_website/'),
+    path: path.resolve(__dirname, './geany.dotnet_core/geany.dotnet_core/wwwroot/'),
     publicPath: '/',
     filename: '[name].js',
     sourceMapFilename: '[name].js.map'

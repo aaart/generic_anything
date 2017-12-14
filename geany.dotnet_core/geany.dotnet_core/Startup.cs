@@ -8,6 +8,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.FileProviders;
+using System.IO;
 
 namespace geany.dotnet_core
 {
@@ -27,14 +29,27 @@ namespace geany.dotnet_core
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder builder, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                builder.UseDeveloperExceptionPage();
             }
 
-            app.UseMvc();
+            builder.UseDefaultFiles(new DefaultFilesOptions
+            {
+                RequestPath = string.Empty,
+                DefaultFileNames = new List<string> { "index.html" },
+                FileProvider = env.WebRootFileProvider
+            });
+
+            var opts = new StaticFileOptions
+            {
+                RequestPath = string.Empty,
+                FileProvider = env.WebRootFileProvider
+            };
+            builder.UseStaticFiles(opts);
+            builder.UseMvc();
         }
     }
 }

@@ -12,8 +12,8 @@
   },
   "scripts": {
     "build-website-dev": "gulp build-website --isDev",
-    "run-website-dev": "gulp build-website --isDev & dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
-    "run-website-prod": "gulp build-website --isProd & dotnet run --project ./kestrelhost/ | opn http://localhost:5050",
+    "run-website-dev": "gulp build-website --isDev & dotnet run --project ./geany.dotnet_core/geany.dotnet_core/ | opn http://localhost:5050",
+    "run-website-prod": "gulp build-website --isProd & dotnet run --project ./geany.dotnet_core/geany.dotnet_core/ | opn http://localhost:5050",
     
     "pip-install": "pip install pyramid",
     

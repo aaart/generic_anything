@@ -243,11 +243,6 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-# customs
-3rd/
-_website/
-.idea/
-
 
 # PYTHON PART from https://github.com/github/gitignore/blob/master/Python.gitignore
 
@@ -355,3 +350,14 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+# customs
+3rd/
+_website/
+.idea/
+# folder treated as artifacts
+geany.dotnet_core/geany.dotnet_core/wwwroot/
+
+
+# publish profiles
+geany.dotnet_core/geany.dotnet_core/Properties/PublishProfiles/
