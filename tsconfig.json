@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "./_website",
+        "outDir": "./geany.dotnet_core/geany.dotnet_core/wwwroot",
         "sourceMap": true,
         "strict": true,
         "module": "commonjs",
