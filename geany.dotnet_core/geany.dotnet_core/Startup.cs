@@ -36,19 +36,21 @@ namespace geany.dotnet_core
                 builder.UseDeveloperExceptionPage();
             }
 
-            builder.UseDefaultFiles(new DefaultFilesOptions
-            {
-                RequestPath = string.Empty,
-                DefaultFileNames = new List<string> { "index.html" },
-                FileProvider = env.WebRootFileProvider
-            });
+            builder.UseDefaultFiles(
+                new DefaultFilesOptions
+                {
+                    RequestPath = string.Empty,
+                    DefaultFileNames = new List<string> { "index.html" },
+                    FileProvider = env.WebRootFileProvider
+                });
+            
+            builder.UseStaticFiles(
+                new StaticFileOptions
+                {
+                    RequestPath = string.Empty,
+                    FileProvider = env.WebRootFileProvider
+                });
 
-            var opts = new StaticFileOptions
-            {
-                RequestPath = string.Empty,
-                FileProvider = env.WebRootFileProvider
-            };
-            builder.UseStaticFiles(opts);
             builder.UseMvc();
         }
     }
