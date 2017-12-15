@@ -21,7 +21,7 @@ export default class CityListViewModel extends Vue {
                     _this.cities.push(...response.data);
                 }
             )
-            .catch(rejected => { alert("caught!"); });
+            .catch(rejected => { alert("No city list found!"); });
     }
 
 }
