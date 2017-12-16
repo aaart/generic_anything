@@ -18,9 +18,8 @@
         "paths": {
             "Routes": ["src/Routes"],
             "VueApp": ["src/VueApp"],
-            "ServiceResponse": ["src/common/ServiceResponse"],
 
-            "common/*": ["src/common/*"],
+            "infrastructure/*": ["src/infrastructure/*"],
             "scopes/*": ["src/scopes/*"],
             "pages/*": ["src/pages/*"],
 

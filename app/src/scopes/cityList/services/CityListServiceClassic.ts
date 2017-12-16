@@ -2,7 +2,7 @@ import { injectable } from "inversify";
 
 import CityListService from "scopes/cityList/services/CityListService";
 import City from "scopes/cityList/dto/City";
-import ServiceResponse from "ServiceResponse";
+import ServiceResponse from "infrastructure/service/generic/ServiceResponse";
 import * as $ from "jquery";
 
 @injectable()

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using geany.dotnet_core.Common;
+﻿using Microsoft.AspNetCore.Mvc;
+using geany.dotnet_core.Infrastructure.Service.Generic;
 using geany.dotnet_core.Scopes.CityList.Dto;
 
 namespace geany.dotnet_core.Controllers

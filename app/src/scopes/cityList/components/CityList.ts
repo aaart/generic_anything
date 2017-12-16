@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Component from 'vue-class-component'
 import { lazyInject, SERVICE_IDENTIFIER } from 'inversify.config'
-import ServiceResponse from 'ServiceResponse'
+import ServiceResponse from "infrastructure/service/generic/ServiceResponse"
 import City from "scopes/cityList/dto/City"
 import CityListService from 'scopes/cityList/services/CityListService'
 
