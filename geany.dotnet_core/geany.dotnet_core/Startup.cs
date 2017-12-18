@@ -34,6 +34,8 @@ namespace geany.dotnet_core
             if (env.IsDevelopment())
             {
                 builder.UseDeveloperExceptionPage();
+                Console.WriteLine($"content root dir: {env.ContentRootPath}");
+                Console.WriteLine($"web root dir: {env.WebRootPath}");
             }
 
             builder.UseDefaultFiles(
