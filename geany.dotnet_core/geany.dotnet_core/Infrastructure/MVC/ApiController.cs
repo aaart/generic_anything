@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using geany.dotnet_core.Infrastructure.Service;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace geany.dotnet_core.Infrastructure.MVC
@@ -12,6 +13,7 @@ namespace geany.dotnet_core.Infrastructure.MVC
             if (context.Exception != null)
             {
                 // sth here
+                context.Result = new JsonResult(new FromDescriptorErroredServiceResponse(context.ActionDescriptor));
                 context.ExceptionHandled = true;
             }
         }
