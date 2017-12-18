@@ -9,6 +9,6 @@ namespace geany.dotnet_core.Controllers
     [Route("api/[controller]")]
     public class CityListController : ApiController
     {
-        public ServiceResponse<City[]> Cities() => new ServiceResponse<City[]> { Data = new [] { new City { Name = "Lablyn" }, new City { Name = "Dablyn" } } };
+        public City[] Cities() => new[] { new City { Name = "Lablyn" }, new City { Name = "Dablyn" } };
     }
 }
