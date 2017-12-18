@@ -11,7 +11,6 @@ namespace geany.dotnet_core
 
         public static void Main(string[] args)
         {
-            Console.WriteLine(args.FirstOrDefault());
             BuildWebHost(args).Run();
         }
 
