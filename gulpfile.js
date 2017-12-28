@@ -59,6 +59,7 @@ gulp.task(
         "copy-vue",
         "copy-vue-router",
         "copy-bootstrap",
+        "copy-fontawesome",
         "run-webpack"
     ]);
 
@@ -132,6 +133,23 @@ gulp.task("copy-bootstrap", () => {
         .pipe(rename(path => tools.removeNameSuffix(path, ".minx")))
         .pipe(cleanDest(cfg.externalsTarget + "bootstrap/js/"))    
         .pipe(gulp.dest(cfg.externalsTarget + "bootstrap/js/"));
+});
+
+gulp.task("copy-fontawesome", () => {
+    var sourceStyles = tools.extractSrcFiles("font-awesome/css/", ".css").concat(tools.extractSrcFiles("font-awesome/css/", ".css.map"));
+
+    gulp.src(sourceStyles)
+        .pipe(rename(path => {
+            tools.removeNameSuffix(path, ".min.css", ".css");
+            tools.removeNameSuffix(path, ".min");
+            
+        }))
+        .pipe(cleanDest(cfg.externalsTarget + "font-awesome/css/"))
+        .pipe(gulp.dest(cfg.externalsTarget + "font-awesome/css/"));
+
+    gulp.src(cfg.nodeModules + "font-awesome/fonts/*")
+        .pipe(cleanDest(cfg.externalsTarget + "font-awesome/fonts/"))
+        .pipe(gulp.dest(cfg.externalsTarget + "font-awesome/fonts/"));
 });
 
 gulp.task("run-webpack", () => {

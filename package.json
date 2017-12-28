@@ -2,6 +2,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.85",
     "bootstrap": "^3.3.7",
+    "font-awesome": "^4.7.0",
     "inversify": "^4.5.1",
     "inversify-inject-decorators": "^3.0.2",
     "jquery": "^3.2.1",
@@ -14,9 +15,7 @@
     "build-website-dev": "gulp build-website --isDev",
     "run-website-dev": "gulp build-website --isDev && powershell.exe .\\dotnetcore_runner.ps1",
     "run-website-prod": "gulp build-website --isProd && powershell.exe .\\dotnetcore_runner.ps1",
-    
     "pip-install": "pip install pyramid",
-    
     "test": "karma start"
   },
   "devDependencies": {

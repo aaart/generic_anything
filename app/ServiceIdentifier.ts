@@ -1,4 +1,5 @@
 const SERVICE_IDENTIFIER = {    
+    ABOUT_SERVICE:                  Symbol("AboutService"),
     ACTIVE_ANNOUNCEMENT_MANAGER:    Symbol("ActiveAnnouncementManager"),
     ANNOUNCEMENT_BUS:               Symbol("AnnouncementBus"),
     CITY_LIST_SERVICE:              Symbol("CityListService"),

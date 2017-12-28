@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using geany.dotnet_core.Infrastructure.Service.Generic;
 using geany.dotnet_core.Scopes.CityList.Dto;
 using geany.dotnet_core.Infrastructure.MVC;
 

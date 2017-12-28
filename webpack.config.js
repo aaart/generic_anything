@@ -7,7 +7,7 @@ var TsConfigPathsPlugin = require('awesome-typescript-loader').TsConfigPathsPlug
 module.exports = {
   entry: {
     'application': './app/src/app.ts', 
-    'application-styles': "./app/src/css/timezones.css"
+    'application-styles': "./app/src/css/app.css"
   },
   output: {
     path: path.resolve(__dirname, './geany.dotnet_core/geany.dotnet_core/wwwroot/'),

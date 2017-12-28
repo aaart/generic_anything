@@ -10,11 +10,6 @@ namespace geany.dotnet_core.Test.Infrastructure.MVC
 {
     public static class Helpers
     {
-        public static void CreateControllerAndContext(out ApiController controller, out ActionExecutedContext context)
-        {
-            CreateControllerAndContext<ApiController>(out controller, out context);
-        }
-
         public static void CreateControllerAndContext<TController>(out TController controller, out ActionExecutedContext context)
             where TController: ApiController, new()
         {

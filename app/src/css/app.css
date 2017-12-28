@@ -1,3 +1,9 @@
+.isDisabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  box-shadow: none;
+  opacity: .65;
+}
 
 .width-100-percent {
   width: 100%;

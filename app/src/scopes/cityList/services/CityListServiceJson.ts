@@ -6,7 +6,7 @@ import ServiceResponse from "infrastructure/service/generic/ServiceResponse";
 import * as $ from "jquery";
 
 @injectable()
-export default class CityListServiceClassic implements CityListService {
+export default class CityListServiceJson implements CityListService {
     public GetDefaults(): Promise<ServiceResponse<Array<City>>> {
         return $.ajax({
             method: "GET",
