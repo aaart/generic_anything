@@ -6,6 +6,9 @@ var specContext;
 specContext = require.context('./spec/inversify', true, /\.spec$/)
 specContext.keys().forEach(specContext)
 
+specContext = require.context('./spec/pages/about', true, /\.spec$/)
+specContext.keys().forEach(specContext)
+
 specContext = require.context('./spec/poc', true, /\.spec$/)
 specContext.keys().forEach(specContext)
 
